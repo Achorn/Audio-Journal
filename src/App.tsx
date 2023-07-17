@@ -1,23 +1,31 @@
-import logo from "./logo.svg";
 import "./App.css";
+import { NavLink, Route, Routes } from "react-router-dom";
+import AudioRecorder from "./pages/audio-recorder/AudioRecorder";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div>
+              <h1>Home</h1>
+              <NavLink to={`/audio-recorder`}> Record </NavLink>
+            </div>
+          }
+        />
+        <Route path="/audio-recorder" element={<AudioRecorder />} />
+        <Route
+          path="/signin"
+          element={
+            <div>
+              <h1>Signin</h1>
+              <NavLink to={`/`}> Home </NavLink>
+            </div>
+          }
+        />
+      </Routes>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 {
   "name": "audio-journal",
+  "homepage": "https://achorn.github.io/audio-journal/#/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
